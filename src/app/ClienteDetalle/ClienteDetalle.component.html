@@ -1,0 +1,359 @@
+<mat-toolbar class="nav">
+  <mat-toolbar-row>
+    <!-- <button mat-icon-button (click)="sidenav.toggle();"> -->
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="sidenav.toggle();">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>BluesoftBank</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav #sidenav class="nav-list">
+    <mat-nav-list>
+      <a mat-list-item href="#Logo">Inicio <mat-icon>house</mat-icon></a>
+      <a mat-list-item href="#Clientes">Mis Clientes <mat-icon>person</mat-icon></a>
+      <a mat-list-item href="#Transferencia">Crear Transanccion <mat-icon>note</mat-icon></a>
+      <a mat-list-item href="#CrearCuenta">Crear Cuenta <mat-icon>add_circle</mat-icon></a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content >
+    <div>
+      <div class="Contenido">
+        <section id="Logo" class="Logo"></section>
+        <section id="Clientes">
+          <div class="titulo"><h1>Mis clientes</h1></div>
+          <br>
+          <hr>
+          <br>
+          <div class="btnExports">
+            <button mat-raised-button class="btnExcel" (click)="GenerarExcel()">Generar Reporte Excel 1 <img width="20px" height="auto" src="data:image/png;base64,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" alt=""></button>
+            &nbsp;
+            <button mat-raised-button class="btnExcel" (click)="GenerarExcelI()">Generar Reporte Excel 2 <img width="20px" height="auto" src="data:image/png;base64,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" alt=""></button>
+          </div>
+          <br>
+          <br>
+          <hr>
+          <div class="mb3">
+            <label for="" class="form-label">Buscar Cliente</label>
+            <input class="form-control" [(ngModel)]="ClientesFilter.numeroIdentificador" placeholder="Ingrese el documento del cliente">
+          </div>
+          <div class="ContenidoDetalle">
+            <mat-accordion *ngFor="let item of ListaClienteDetalle | filterBy:ClientesFilter | paginate: { itemsPerPage: itemsPerPage, currentPage: p }">
+              <mat-expansion-panel (opened)="panelOpenState = true"
+                             (closed)="panelOpenState = false" style="margin-top: 5px;">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    # {{item.id}}
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    {{item.pnombre}} {{item.snombre}} {{item.papellido}} {{item.sapellido}} 
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Fecha de nacimiento</th>
+                      <th>{{item.fechaNacimiento | date: 'dd/MM/yyyy'}}</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="col">Tipo de cliente</th>
+                      <td>{{obtenerNombreTCliente(item.idTipoCliente)}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="col">Numero de identificación</th>
+                      <td>{{item.numeroIdentificador}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <hr>
+                Cuentas asociadas:
+                <hr>
+                <br>
+                <mat-accordion *ngFor="let item of item.cuenta">
+                  <mat-expansion-panel (opened)="panelOpenState = true"
+                                       (closed)="panelOpenState = false" style="margin-top: 5px;">
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                        # Cuenta:
+                      </mat-panel-title>
+                      <mat-panel-description>
+                        {{item.numeroCuenta}}
+                      </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th scope="col">Saldo</th>
+                          <th>{{item.saldoCuenta | currency}}</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="col">Ciudad</th>
+                          <td>{{obtenerNombreCiudad(item.idCiudad)}}</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Fecha de apertura</th>
+                          <td>{{item.fechaCreacion | date: 'dd/MM/yyyy'}}</td>
+                        </tr>
+                        <tr>
+                          <th scope="col">Tipo de cuenta</th>
+                          <td>{{obtenerNombreTCuenta(item.idTipoCuenta)}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </mat-expansion-panel>
+                </mat-accordion>
+                <hr>
+                Historico de transacciones:
+                <hr>
+                <br>
+                <p *ngIf="item.movimiento.length == 0">No se han realizado transacciones</p>
+                <div *ngIf="item.movimiento.length > 0">
+                  <mat-accordion  *ngFor="let item of item.movimiento">
+                    <mat-expansion-panel (opened)="panelOpenState = true"
+                                         (closed)="panelOpenState = false" style="margin-top: 5px;">
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                          {{obtenerNombreMovimiento(item.idMovimiento)}}
+                        </mat-panel-title>
+                        <mat-panel-description>
+                          {{item.fechaMovimiento | date: 'dd/MM/yyyy'}}
+                        </mat-panel-description>
+                      </mat-expansion-panel-header>
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">Monto: </th>
+                            <th>{{item.monto | currency}}</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="col">Ciudad</th>
+                            <td>{{obtenerNombreCiudad(item.idCiudad)}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="col">Cuenta</th>
+                            <td>{{obtenerNombreNumeroCuenta(item.idCuenta)}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </mat-expansion-panel>
+                  </mat-accordion>
+                </div>
+              </mat-expansion-panel>
+            </mat-accordion>
+            <br>
+            <mat-card *ngIf="(ListaClienteDetalle | filterBy:ClientesFilter | paginate: { itemsPerPage: itemsPerPage, currentPage: p }).length < 1">No se encontraron resultados</mat-card>
+          </div>
+          <br>
+          <pagination-controls  (pageChange)="p = $event" previousLabel="Anterior"
+          nextLabel="Siguiente"></pagination-controls> 
+          <br>       
+        </section>
+        <section id="Transferencia">
+          <div>
+            <div [formGroup]="FormRegisterTrans" class="FormularioTrans">
+              <div class="titulo"><h1>Realizar transacciones</h1></div>
+              <hr>
+              <br>
+              <div class="row">
+                <div class="col">
+                  <mat-form-field appearance="outline" style="width: 100%;">
+                    <mat-label>Numero de cuenta</mat-label>
+                    <input type="number" matInput placeholder="Numero de cuenta" formControlName="numeroCuenta">
+                  </mat-form-field>
+                </div>
+                <div class="col">
+                  <mat-form-field appearance="outline" style="width: 100%;">
+                    <mat-label>Monto</mat-label>
+                    <input maxlength="20" type="text" matInput placeholder="Monto" formControlName="monto" (input)="formatCurrency($event)">
+                  </mat-form-field>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <mat-form-field appearance="outline" style="width: 100%;">
+                    <mat-label>Tipo de transacción</mat-label>
+                    <mat-select formControlName="TipoMovimiento">
+                        <mat-option *ngFor="let item of ListTipoMovimiento" [value]="item.id">{{item.nombreMovimiento}}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                <div class="col">
+                  <mat-form-field appearance="outline" style="width: 100%;">
+                    <mat-label>Seleccione la ciudad</mat-label>
+                    <mat-select formControlName="idCiudad">
+                        <mat-option *ngFor="let item of ListCiudad" [value]="item.id">{{item.nombreCiudad}}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </div>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Resumen del movimiento</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="col">Numero de cuenta</th>
+                      <th >{{FormRegisterTrans.controls['numeroCuenta'].value}}</th>
+                    </tr>
+                    <tr>
+                      <th scope="col">Monto</th>
+                      <th >{{FormRegisterTrans.controls['monto'].value}}</th>
+                    </tr>
+                    <tr>
+                      <th scope="col">Tipo de transacción</th>
+                      <th >{{obtenerNombreMovimiento(FormRegisterTrans.controls['TipoMovimiento'].value)}}</th>
+                    </tr>
+                    <tr>
+                      <th scope="col">Ciudad selecionada</th>
+                      <th >{{obtenerNombreCiudad(FormRegisterTrans.controls['idCiudad'].value)}}</th>
+                    </tr>
+                  </tbody>
+                </table>
+                <br>
+                <br>
+                <button mat-raised-button style="background: rgba(60, 61, 57, 0.342);" [disabled]="FormRegisterTrans.invalid" (click)="CrearTransaccion()">Registrar transacion</button>
+                <br>
+                <br>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="CrearCuenta">
+          <div class="titulo"><h1>Crear Cuenta</h1></div>
+          <hr>
+          <br>
+          <mat-stepper orientation="vertical" [linear]="true" #stepper>
+            <!-- Paso 1 -->
+            <mat-step [stepControl]="FormRegister">
+              <ng-template matStepLabel>Nombre completo</ng-template>
+              <br>
+              <form [formGroup]="FormRegister">
+                <div class="row">
+                  <div class="col">
+                    <mat-form-field appearance="outline" style="width: 100%;">
+                      <mat-label>Primer Nombre</mat-label>
+                      <input matInput placeholder="Primer Nombre" formControlName="pnombre">
+                    </mat-form-field>
+                  </div>
+                  <div class="col">
+                    <mat-form-field appearance="outline" style="width: 100%;">
+                      <mat-label>Segundo Nombre</mat-label>
+                      <input matInput placeholder="Segundo Nombre" formControlName="snombre">
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <mat-form-field appearance="outline" style="width: 100%;">
+                      <mat-label>Primer Apellido</mat-label>
+                      <input matInput placeholder="Primer Apellido" formControlName="papellido">
+                    </mat-form-field>
+                  </div>
+                  <div class="col">
+                    <mat-form-field appearance="outline" style="width: 100%;">
+                      <mat-label>Segundo Apellido</mat-label>
+                      <input matInput placeholder="Segundo Apellido" formControlName="sapellido">
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div>
+                  <button mat-button matStepperNext>Siguiente</button>
+                </div>
+              </form>
+            </mat-step>
+          
+            <!-- Paso 2 -->
+            <mat-step [stepControl]="FormRegisterI">
+              <ng-template matStepLabel>Datos personales</ng-template>
+              <br>
+              <form [formGroup]="FormRegisterI">
+                <div class="row">
+                  <div class="col">
+                    <mat-form-field appearance="outline" style="width: 100%;">
+                      <mat-label>Fecha de nacimiento</mat-label>
+                      <input matInput [matDatepicker]="datepicker" formControlName="fechaNacimiento">
+                      <mat-hint>MM/DD/YYYY</mat-hint>
+                      <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+                      <mat-datepicker #datepicker>
+                        <mat-datepicker-actions>
+                          <button mat-button matDatepickerCancel>Cancel</button>
+                          <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+                        </mat-datepicker-actions>
+                      </mat-datepicker>
+                    </mat-form-field>
+                  </div>
+                  <div class="col">
+                    <mat-form-field appearance="outline" style="width: 100%;">
+                      <mat-label>Tipo de cliente</mat-label>
+                    <mat-select formControlName="idTipoCliente">
+                        <mat-option *ngFor="let item of ListTipoCLiente" [value]="item.id">{{item.tipoCliente1}}</mat-option>
+                    </mat-select>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <mat-form-field appearance="outline" style="width: 100%;">
+                      <mat-label>Ingrese el numero de identificacion</mat-label>
+                      <input matInput placeholder="Ingrese el numero de identificacion" formControlName="numeroIdentificador">
+                    </mat-form-field>
+                  </div>
+                  <div class="col">
+                    <mat-form-field appearance="outline" style="width: 100%;">
+                      <mat-label>Numero de cuenta</mat-label>
+                      <input matInput placeholder="Numero de cuenta" formControlName="numeroCuenta">
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div>
+                  <button mat-button matStepperNext>Siguiente</button>
+                </div>
+              </form>
+            </mat-step>
+          
+            <!-- Paso 3 -->
+            <mat-step [stepControl]="FormRegisterII">
+              <ng-template matStepLabel>Datos bancarios</ng-template>
+              <form [formGroup]="FormRegisterII">
+                <br>
+                <div class="row">
+                  <div class="col">
+                      <mat-form-field appearance="outline" style="width: 100%;">
+                        <mat-label>Ingrese un monto</mat-label>
+                        <input matInput placeholder="Ingrese un monto" formControlName="saldoCuenta">
+                      </mat-form-field>
+                  </div>
+                  <div class="col">
+                    <mat-form-field appearance="outline" style="width: 100%;">
+                      <mat-label>Seleccione la ciudad</mat-label>
+                    <mat-select formControlName="idCiudad">
+                        <mat-option *ngFor="let item of ListCiudad" [value]="item.id">{{item.nombreCiudad}}</mat-option>
+                    </mat-select>
+                    </mat-form-field>
+                  </div>
+                  <button mat-flat-button (click)="CrearCliente()" [disabled]="FormRegisterII.invalid || FormRegister.invalid || FormRegisterI.invalid">Registrar Cliente</button>
+                </div>
+                <div>
+                  <button mat-button matStepperPrevious>Anterior</button>
+                </div>
+              </form>
+            </mat-step>
+          </mat-stepper>
+        </section>
+        <div class="Redes">
+
+        </div>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
